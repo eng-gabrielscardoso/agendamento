@@ -19,7 +19,7 @@ mongoose.connect(dbConnection)
   .catch((e) => console.error(`Ocorreu um erro durante a conexão com o banco de dados. ${e}`))
 
 app.get('/', (req, res, next) => {
-  res.json({ status: true });
+  res.render('create');
 });
 
 app.listen(port, () => {
