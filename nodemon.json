@@ -1,0 +1,7 @@
+{
+  "watch": ["index"],
+  "ext": "js",
+  "ignore": [],
+  "delay": "1",
+  "execMap": {}
+}
