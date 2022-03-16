@@ -46,7 +46,7 @@ app.post('/create', async (req, res, next) => {
     console.log(`Um erro ocorreu durante a requisição de salvamento. Log: ${e}`);
     res.redirect('/');
   }
-})
+});
 
 app.listen(port, () => {
   try {
