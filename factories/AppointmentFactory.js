@@ -8,7 +8,7 @@ class AppointmentFactory {
     let minutes = Number.parseInt(query.time.split(':')[1]);
 
     let startDate = new Date(year, month, day, hour, minutes, 0, 0);
-    startDate.setHours( startDate.getHours() - 3 );
+    // startDate.setHours( startDate.getHours() - 3 );
 
     let appo = {
       id: query._id,
