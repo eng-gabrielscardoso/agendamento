@@ -6,3 +6,7 @@ const calendar = new FullCalendar.Calendar(calendarTarget, {
 });
 
 calendar.render();
+
+$(function () {
+  $('#pacientCPF').mask('000.000.000.-00', { reverse: true, });
+});
