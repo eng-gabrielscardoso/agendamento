@@ -29,8 +29,14 @@ app.get('/new', (req, res, next) => {
 });
 
 app.get('/getcalendar', async (req, res, next) => {
-  let query = await AppointmentService.getAll(false);
-  await res.json(query);
+  try {
+    let query = await AppointmentService.getAll(false);
+    await console.log('Listagem realizada com sucesso');
+    await res.json(query);
+  } catch (e) {
+    await console.log(`Ocorreu um erro durante a listagem: ${e}`);
+    await res.redirect('/');
+  }
 });
 
 app.post('/create', async (req, res, next) => {
