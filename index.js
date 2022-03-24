@@ -19,6 +19,10 @@ mongoose.connect(dbConnection)
   .catch((e) => console.error(`Ocorreu um erro durante a conexão com o banco de dados. ${e}`))
 
 app.get('/', (req, res, next) => {
+  res.render('index');
+});
+
+app.get('/novo', (req, res, next) => {
   res.render('create');
 });
 
