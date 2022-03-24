@@ -20,15 +20,11 @@ mongoose.connect(dbConnection)
   .then(() => console.log('Conexão com o banco de dados estabelecida'))
   .catch((e) => console.error(`Ocorreu um erro durante a conexão com o banco de dados. ${e}`))
 
-<<<<<<< HEAD
 app.get('/', (req, res, next) => {
   res.render('index');
 });
 
 app.get('/novo', (req, res, next) => {
-=======
-app.get('/', async (req, res, next) => {
->>>>>>> aefcb61cf44be1d556270b04ae4bfc1df212a6eb
   res.render('create');
 });
 
