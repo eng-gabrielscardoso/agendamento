@@ -39,6 +39,10 @@ app.get('/getcalendar', async (req, res, next) => {
   }
 });
 
+app.get('/event/:id', async (req, res, next) => {
+  res.json({ id: req.params.id });
+})
+
 app.post('/create', async (req, res, next) => {
   try {
     const status = await AppointmentService.create(
