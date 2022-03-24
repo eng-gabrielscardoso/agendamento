@@ -5,7 +5,7 @@ const appointment = require('../models/Appointment');
 const Appointment = mongoose.model('Appointment', appointment);
 
 class AppointmentService {
-  static async create (name, email, cpf, description, date, time) {
+  async create (name, email, cpf, description, date, time) {
     const newAppointment = new Appointment({
       name,
       email,
@@ -23,6 +23,14 @@ class AppointmentService {
     } catch (e) {
       console.error(`Ocorreu um erro durante o registro. Log: ${e}`);
       return false;
+    }
+  }
+
+  async getAll (showFinished) {
+    if (showFinished) {
+      return await Appointment.find();
+    } else {
+      return await Appointment.find({ 'finished': false });
     }
   }
 }

@@ -24,8 +24,13 @@ app.get('/', (req, res, next) => {
   res.render('index');
 });
 
-app.get('/novo', (req, res, next) => {
+app.get('/new', (req, res, next) => {
   res.render('create');
+});
+
+app.get('/getcalendar', async (req, res, next) => {
+  let query = await AppointmentService.getAll(false);
+  await res.json(query);
 });
 
 app.post('/create', async (req, res, next) => {
